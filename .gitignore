@@ -1,0 +1,5 @@
+.vscode/
+previous/
+geckodriver.log
+URLs_archived.txt
+URLs_for_archiving.txt
