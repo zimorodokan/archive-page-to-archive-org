@@ -132,6 +132,11 @@ def archive_urls(source_urls_file="URLs_source.txt",
             time.sleep(60)
             process_url(url)
 
+        except Exception as e:
+            print(type(e))
+            print(e.args)
+            print(e)
+
         else:
             print("\t", time.strftime("%H:%M:%S", time.localtime()), "URL loaded")
             process_url_after_loading()
@@ -179,6 +184,11 @@ def create_not_archived_urls_file(
                     new_source_file.write(source_line.rstrip() + "\n")
 
 
-archive_urls()
-
-create_not_archived_urls_file()
+try:
+    archive_urls()
+except Exception as e:
+    print(type(e))
+    print(e.args)
+    print(e)
+finally:
+    create_not_archived_urls_file()
